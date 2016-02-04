@@ -6,6 +6,51 @@ var control = [35,36,37,38,39,40,41];
 var choices = ['red','black'];//player turns
 var a = 0; //switches the turns 
 var checkDraw = 0; //counts if the entire boards has been played --->credit Vincent!!
+var winnerFound = false;//make sure the aI does not play when winner is found
+// var threeInARow = false; //notifies the aI when the player is close to a win
+// var awplus = null;
+// var awMinus = null;
+// var almost = [awplus, awMinus];//global --> both minus and plus 
+// var almostWin = null;
+
+var aI = function(){
+  if(!(winnerFound) && (players[1] == 'Computer')){
+
+    // if(threeInARow){
+    //   setTimeout(function(){
+    //     // var almostWin = almost[Math.floor(Math.random()*2)]; //in the aI
+    //     if((almostWin == 0)||(almostWin == 1)||(almostWin == 2)||(almostWin == 3)||(almostWin == 4)||(almostWin == 5)||(almostWin == 6)){
+    //       $board.eq(control[almostWin]).css('background',choices[a]);
+    //     } else {
+    //         while(almostWin > 6){
+    //           almostWin -= 7;
+    //         }
+    //         $board.eq(control[almostWin]).css('background',choices[a]);
+    //       }
+    //     if(a == 0){a = 1;}else{a = 0;}//switches between red and black
+    //     control[almostWin] -= 7; //allows the board to not play in a played spot - minus the current index by 7 to get the one right above it
+    //     $display.text(players[a]);
+    //     var comPLay = new Audio("styles/smb3_thwomp.wav");
+    //     comPLay.play();
+    //   },500);
+    //   console.log('Blocked');
+    // } else {
+        setTimeout(function(){
+          var randomNumber = Math.floor(Math.random()*7); 
+          $board.eq(control[randomNumber]).css('background',choices[a]);//sets the board to the current color played red||black
+          if(a == 0){a = 1;}else{a = 0;}//switches between red and black
+          control[randomNumber] -= 7; //allows the board to not play in a played spot - minus the current index by 7 to get the one right above it
+          $display.text(players[a]);
+          var comPLay = new Audio("styles/smb3_thwomp.wav");
+          comPLay.play();
+           checkWinner();
+        },500);
+      }
+  // }
+ 
+}
+
+
 // Starts the game hiding the board and enlarging the header
 $('header').css('height','100%');
 $('header').css('width','100%');
@@ -103,6 +148,13 @@ var checkWinner = function(){
           if((b === edgeL[e])|| (b === edgeR[e])) edgeCheck = true;
           if((c === edgeL[e])|| (c === edgeR[e])) edgeCheck = true;
         }
+        // fixing bug that developed from my edgeCheck..wouldnt check for wins on the edge columns..setting the edgeCheck to false when a & d are both edge numbers of the same column
+        for(var k = 0; k < edgeR.length; k++){
+          for(var l = 0; l < edgeR.length; l++){
+            if(a === edgeL[k] && d === edgeL[l]) edgeCheck = false;
+            if(a === edgeR[k] && d === edgeR[l]) edgeCheck = false;
+          }
+        }
         // creating a limit for the board not less than 0 and not greater than 41 if it is the loop moves on to the other factor 
         if( (b < 0) || (c < 0) || (d < 0) ) continue;
         if( (b > 41)  || (c > 41) || (d > 41) ) continue;
@@ -114,7 +166,10 @@ var checkWinner = function(){
             $board.eq(d).css('background','green');
             win = true;
             return; //prevents it from running the check twice.
-          }
+          } /*else if( ($board[a].style.background === choices[z]) && ($board[b].style.background === choices[z]) && ($board[c].style.background === choices[z])){
+              almostWin = d;
+              threeInARow = true;
+          }*/
       }
       for(var i = 0; i < checks.length; i++){ //MINUS CHECKS [LEFT - UPLEFT - UP - UPRIGHT] same as addition!
         var a = index;
@@ -129,6 +184,13 @@ var checkWinner = function(){
           if((b === edgeL[e])|| (b === edgeR[e])) edgeCheck = true;
           if((c === edgeL[e])|| (c === edgeR[e])) edgeCheck = true;
         }
+        // fixing bug that developed from my edgeCheck..wouldnt check for wins on the edge columns..setting the edgeCheck to false when a & d are both edge numbers of the same column
+         for(var k = 0; k < edgeR.length; k++){
+          for(var l = 0; l < edgeR.length; l++){
+            if(a === edgeL[k] && d === edgeL[l]) edgeCheck = false;
+            if(a === edgeR[k] && d === edgeR[l]) edgeCheck = false;
+          }
+        }
         if( (b < 0) || (c < 0) || (d < 0) ) continue;
         if( (b > 41)  || (c > 41) || (d > 41) ) continue;
         if(edgeCheck) continue;
@@ -140,12 +202,16 @@ var checkWinner = function(){
             $board.eq(d).css('background','green');
             win = true;
             return; 
-          }
+          } /*else if( ($board[a].style.background === choices[z]) && ($board[b].style.background === choices[z]) && ($board[c].style.background === choices[z])){
+              almostWin = d;
+              threeInARow = true;
+          }*/
       }
     }
   }
   });
 if(win) {
+  winnerFound = true;
   // alert('WIN!');
   choices = []; //stops the user from entering plays on the board
   setTimeout(function(){ //delays the switch so the user can see where they one
@@ -229,7 +295,7 @@ checkDraw++;
   var coinSound = new Audio("styles/smw_coin.wav"); //plays a sound when the user clicks
   coinSound.play();
   checkWinner(); //checks for winning combination on every play
-
+  aI();
 });
 
 });
