@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'fontello';
-    src: url('/styles/fontello/font/fontello.ttf');
+    src: url('Connect_Four/styles/fontello/font/fontello.ttf');
 }
 body{
   background: url("pulp_fiction.jpg");
