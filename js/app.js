@@ -202,13 +202,13 @@ var displayWinner = function() {
     $display.css({'font-size':'100px','margin-top':'14%'}); //increases the size of the display font
     // click event for the done and replay buttons
     $done.click(function(){
-      $done.remove(); $replay.remove();
-      $display.text('Thanks for playing!');
-      setTimeout(function(){
+      $done.remove(); $replay.remove(); //removes replay button
+      $display.text('Thanks for playing!'); //displays message
+      setTimeout(function(){ //waits 2.5 seconds thens reloads the page
         location.reload();
       },2500);
     });
-    $replay.click(function(){
+    $replay.click(function(){//replay button simply reloads the page
       location.reload();
     });
   },500);
