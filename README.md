@@ -11,6 +11,7 @@ Connect Four (also known as Captain's Mistress, Four Up, Plot Four, Find Four, F
 
 The game was first sold under the famous Connect Four trademark by Milton Bradley in February 1974.
 ..credit Wikipedia
+
 I took a slightly different approach and styled it using patterns from the 80's and SuperMario sounds!!
 
 
