@@ -115,7 +115,7 @@ var aI = function(){
          checkWinner();
       },500);
   }
-}
+};
 
 // Setting up click function on the board
 $boardControl.click(function(){
@@ -177,7 +177,7 @@ var checkWinner = function(){
         }
       }
     });
-  }
+  };
 
 
 var displayWinner = function() {
@@ -212,6 +212,6 @@ var displayWinner = function() {
       location.reload();
     });
   },500);
-}
+};
 
 });

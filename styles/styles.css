@@ -1,7 +1,8 @@
 @font-face {
     font-family: 'fontello';
-    src: url('/Users/dominicprescod/WDI_NYC_Meeseeks/projects/unit_01/connect_four/styles/fontello/font/fontello.ttf');
+    src: url('./fontello/font/fontello.ttf');
 }
+
 body{
   background: url("pulp_fiction.jpg");
   background-repeat: no-repeat;
