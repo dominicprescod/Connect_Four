@@ -1,5 +1,6 @@
 $(function(){
-
+// ===================================================
+// Creating a simple animation with the #4 when the window loads
   var remove = [1,3,5,7,12,13,15];
   var r = 0;
 
@@ -17,7 +18,7 @@ $('td').each(function(i){
     r++;
   }
 });
-
+// ===================================================
 
 
 
