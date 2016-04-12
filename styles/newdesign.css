@@ -3,6 +3,9 @@
   padding: 0;
 }
 
+header {
+  display: inline-flex;
+}
 @font-face {
     font-family: 'arcade-game';
     src: url('ARCADE.ttf');
@@ -20,10 +23,10 @@ h1 {
 }
 
 table {
-  height: 135px;
-  width: 10%;
+  height: 60px;
+  width: 19%;
   margin: 0 auto;
-  margin-top: -2%;
+  margin-left: 15px;
 }
 
 td {
