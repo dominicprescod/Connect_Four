@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: inline-flex;
+}
+@font-face {
+    font-family: 'arcade-game';
+    src: url('./ARCADE.ttf');
+}
+
+@font-face {
+    font-family: 'fontello';
+    src: url('./fontello/font/fontello.ttf');
+}
+body {
+  background: #3FC380;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-family: "arcade-game";
+  font-size: 500%;
+}
+
+header > table {
+  height: 60px;
+  width: 19%;
+  margin: 0 auto;
+  margin-left: 15px;
+}
+
+td {
+  height: 10px;
+  width: 10px;
+  background: white;
+  border-radius: 50%;
+}
+
+
+#radio {
+  width: 100px;
+  height: 30px;
+  background: white;
+  margin: 0 auto;
+  border-radius: 20px;
+  transition: 3s;
+}
+
+#button {
+  font-family: 'fontello';
+  width: 30px;
+  height: 30px;
+  background: #3FC380;
+  border-radius: 20px;
+  transition: 0.8s;
+}
+#button > h5 {
+  padding: 2px;
+  font-size: 20px;
+}
+
+#display > input {
+  width: 150px;
+  height: 20px;
+  margin-top: 50px;
+  border: none;
+  margin-right: 20px;
+  font-size: 17px;
+}
+#display > button {
+  background: yellow;
+border: none;
+width: 35px;
+height: 35px;
+font-size: 19px;
+border-radius: 70px;
+font-weight: 900;
+}
+
+
+main > table {
+  width: 40%;
+  margin: 0 auto;
+  height: 400px;
+  margin-top: 40px;
+}
+
+.control {
+  background: #3FC380;
+  border-radius: 10px;
+  height: .5px;
+  border: 2px double white;
+  transition: 1s;
+}
+
+.control:hover {
+  background: yellow;
+  border: 2px double black;
+}
+
+#messages {
+  width: 50%;
+  height: 390px;
+  background: white;
+  position: absolute;
+  left: 25%;
+  border-radius: 40px;
+}
+
+#messages > h1 {
+  color: #3FC380;
+  margin-top: 120px;
+}
+
+#messages > button {
+  height: 23px;
+    width: 70px;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-right: 60px;
+    color: white;
+    background: #3FC380;
+}
