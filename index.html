@@ -1,29 +1,57 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <title>Connect Four</title>
-  <link rel="stylesheet" type="text/css" href="styles/styles.css">
-  <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
-  <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
-</head>
-<body>
-  <header>
-    <h1>Connect Four</h1>
-    <!-- <div id="man-or-machine">Man vs Man || Man vs Machine</div> -->
-    <h6>Choose</h6>
-    <div id='users'>&#xe809
-      <p>Player vs Player</p>
-    </div>
-    <div id='computer'>&#xe805
-      <p>Player vs Computer</p>
-    </div>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="styles/newdesign.css" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="js/newdesign.js"></script>
+
+  </head>
+  <body>
+    <header>
+        <h1>CONNECT</h1>
+        <table>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
   </header>
+  <div id="radio">
+    <div id="button">
+      <h5>&#xe809</h5>
+    </div>
+  </div>
+  <div id="display">
+    <input type="text" id="p1" name="name" placeholder="Player 1">
+    <input type="text" id="p2" name="name" placeholder="Player 2">
+    <button>Go</button>
+      <h1></h1>
+  </div>
   <main>
     <table>
       <tr>
-        <p id="click">
-        click me >
-        </p>
         <td class="control"></td>
         <td class="control"></td>
         <td class="control"></td>
@@ -86,9 +114,10 @@
         <td class="board"></td>
         <td class="board"></td>
       </tr>
+      <div id="messages">
+        <h1>Enter Player Names</h1>
+      </div>
     </table>
   </main>
-  <footer></footer>
-
-</body>
+  </body>
 </html>

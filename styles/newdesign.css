@@ -40,6 +40,7 @@ td {
   border-radius: 50%;
 }
 
+
 #radio {
   width: 100px;
   height: 30px;
@@ -62,14 +63,66 @@ td {
   font-size: 20px;
 }
 
+#display > input {
+  width: 150px;
+  height: 20px;
+  margin-top: 50px;
+  border: none;
+  margin-right: 20px;
+  font-size: 17px;
+}
+#display > button {
+  background: yellow;
+border: none;
+width: 35px;
+height: 35px;
+font-size: 19px;
+border-radius: 70px;
+font-weight: 900;
+}
+
 
 main > table {
   width: 40%;
   margin: 0 auto;
   height: 400px;
-  margin-top: 100px;
+  margin-top: 40px;
 }
 
 .control {
-  background: red;
+  background: #3FC380;
+  border-radius: 10px;
+  height: .5px;
+  border: 2px double white;
+  transition: 1s;
+}
+
+.control:hover {
+  background: yellow;
+  border: 2px double black;
+}
+
+#messages {
+  width: 50%;
+  height: 390px;
+  background: white;
+  position: absolute;
+  left: 25%;
+  border-radius: 40px;
+}
+
+#messages > h1 {
+  color: #3FC380;
+  margin-top: 120px;
+}
+
+#messages > button {
+  height: 23px;
+    width: 70px;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-right: 60px;
+    color: white;
+    background: #3FC380;
 }
