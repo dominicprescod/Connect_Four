@@ -8,7 +8,7 @@ header {
 }
 @font-face {
     font-family: 'arcade-game';
-    src: url('ARCADE.ttf');
+    src: url('Connect_Four/styles/ARCADE.TTF');
 }
 
 @font-face {
@@ -32,6 +32,7 @@ header > table {
   margin: 0 auto;
   margin-left: 15px;
   margin-top: 8px;
+
 }
 
 td {
