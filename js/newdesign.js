@@ -20,6 +20,30 @@ $('td').each(function(i){
 });
 // ===================================================
 
+$('#radio').click(function(){
+      if ($('#button').css('margin-left') === '0px'){
+        $('#button').css("margin-left", "70px");
+        // $(this).css('background', 'black');
+          setTimeout(function(){
+            $("#button h5").html('&#xe805')
+                          .css({
+                            'padding':'6px',
+                            'font-size': '17px'
+                          });
+
+          },500);
+        } else {
+          $('#button').css("margin-left", "0px");
+          // $(this).css('background', 'white');
+          setTimeout(function(){
+            $("#button h5").html('&#xe809')
+                          .css({
+                            'padding':'2px',
+                            'font-size': '20px'
+                          });
+          },500);
+      }
+  });
 
 
 
