@@ -8,9 +8,8 @@ header {
 }
 @font-face {
     font-family: 'arcade-game';
-    src: url('Connect_Four/styles/ARCADE.ttf');
+    src: url('ARCADE.TTF');
 }
-
 @font-face {
     font-family: 'fontello';
     src: url('./fontello/font/fontello.ttf');
