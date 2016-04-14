@@ -25,6 +25,7 @@ $('#radio').click(function(){
       if ($('#button').css('margin-left') === '0px'){
         $('#button').css("margin-left", "70px");
         // $(this).css('background', 'black');
+        $(this).css('background-position','-15px -12px');
           setTimeout(function(){
             $("#button h5").html('&#xe805')
                           .css({
@@ -37,6 +38,7 @@ $('#radio').click(function(){
         } else {
           $('#button').css("margin-left", "0px");
           // $(this).css('background', 'white');
+          $(this).css('background-position','17px -77px');
           setTimeout(function(){
             $("#button h5").html('&#xe809')
                           .css({
