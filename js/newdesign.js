@@ -21,62 +21,31 @@ $('td').each(function(i){
 // ===================================================
 
 $('#radio').click(function(){
-  console.log($(window).width())
+  // console.log($(window).width())
   if(players.length === 0){
       if ($('#button').css('margin-left') === '0px'){
-        if($(window).width() <= 980) {
-          $('#button').css("margin-left", "220px");
-        } else {
-            $('#button').css("margin-left", "70px");
-        }
-
-          if($(window).width() <= 980) {
-              $(this).css('background-position','-43px -40px');
-          } else  {
-              $(this).css('background-position','-15px -12px');
-          }
+      $('#button').css("margin-left", "70px");
+      $(this).css('background-position','-15px -12px');
 
           setTimeout(function(){
-            if($(window).width() <= 980) {
-              $("#button h5").html('&#xe805')
-                            .css({
-                              'padding':'12px',
-                              'font-size': '50px'
-                            });
-
-            } else {
-              $("#button h5").html('&#xe805')
-                            .css({
-                              'padding':'2px',
-                              'font-size': '20px'
-                            });
-            }
+            $("#button h5").html('&#xe805')
+                          .css({
+                            'padding':'6px',
+                            'font-size': '20px'
+                          });
             $('#p2').hide();
             $('#messages h1').text('Enter Player Name');
           },500);
         } else {
           $('#button').css("margin-left", "0px");
-          if($(window).width() <= 980) {
-              $(this).css('background-position','50px 124px');
-          } else  {
-              $(this).css('background-position','17px -77px');
-          }
+          $(this).css('background-position','17px -77px');
 
           setTimeout(function(){
-            if($(window).width() <= 980) {
-              $("#button h5").html('&#xe809')
-                            .css({
-                              'padding':'2px',
-                              'font-size': '60px'
-                            });
-
-            } else {
-              $("#button h5").html('&#xe809')
-                            .css({
-                              'padding':'2px',
-                              'font-size': '20px'
-                            });
-            }
+            $("#button h5").html('&#xe809')
+                          .css({
+                            'padding':'2px',
+                            'font-size': '20px'
+                          });
                         $('#p2').show();
             $('#messages h1').text('Enter Player Names');
           },500);
@@ -102,10 +71,9 @@ var control     = [35,36,37,38,39,40,41], //allows gameplay for each column (min
 // jQuery / DOM elements setting up the user interface
 var $board          = $('.board'),
     $boardControl   = $('.control'),
-    $reset          = $('<button id="reset">Reset</button>'),
+    $reset          = $('<button id="reset">Reset</button>').css('width', '20%'),
     $done           = $('<button>Done</button>'),
-    $replay         = $('<button>Replay</button>'),
-    $view           = $('<div id="view">');
+    $replay         = $('<button>Replay</button>');
 // console.log($p1);
 
 // Starting the game, user has to choose either User or Computer.
@@ -113,22 +81,20 @@ var $board          = $('.board'),
 // or one to play against the computer
 
 
-$('#view h1').hide();
+$('#display h1').hide();
 
 $('#display button').click(function(){
   $('#display input,button').hide();
-  $('#radio').css('display','none');
+  // $('#radio').css('display','none');
   if(($('#button').css('margin-left') === '0px')){
     players.push($('#p1').val(), $('#p2').val());
   } else {
     players.push($('#p1').val(), 'Computer');
   }
-    $view.append($('<h1>'));
-    $('header').after($view);
     $('#messages').hide();
-    $('#view h1').text(players[n])
+    $('#display h1').text(players[n])
                     .show();
-    $('#view').prepend($reset);
+    $('#display').append($reset);
 });
 
 //reset function that sets the board to its original state when clicked
@@ -138,7 +104,7 @@ $reset.click(function(){
     $board.eq(index).css('background','');//sets all td's to no background -->''
   });
   n = 0; // sets back to 0 to show the first person to play in the players array
-  $('#view h1').text(players[n]);//shows the first player to play
+  $('#display h1').text(players[n]);//shows the first player to play
 });
 
 var aI = function(){
@@ -152,7 +118,7 @@ var aI = function(){
         checkDraw++; //logs the play to check if there's been a draw
         n = (n === 0) ? 1 : 0;//switches between red and black
         control[randomNumber] -= 7; //allows the board to not play in a played spot - minus the current index by 7 to get the one right above it
-        $('#view h1').text(players[n]); //shows the next player
+        $('#display h1').text(players[n]); //shows the next player
          checkWinner();
       },500);
   }
@@ -167,7 +133,7 @@ $boardControl.click(function(){
     control[$(this).index()] -= 7; //logs the play in the control function
     checkDraw++; //logs the play to check for a draw
   }
-  $('#view h1').text(players[n]); //shows the next player to play
+  $('#display h1').text(players[n]); //shows the next player to play
   checkWinner(); //checks winner
   aI(); //activates the aI move
 });
@@ -228,10 +194,6 @@ var displayWinner = function() {
     $reset.hide();
     n = (n === 0) ? 1 : 0;//switches to the previous player that won
     // shows that the game has been drawn
-    $('#messages h1').css({
-      'margin-top':'50px',
-      'font-size': '260px'
-    });
     if(checkDraw >= 42){
       $('#messages h1').text('Its a DRAW!');
     } else {
