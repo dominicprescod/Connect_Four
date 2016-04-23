@@ -84,6 +84,7 @@ $('#display h1').hide();
 
 $('#display button').click(function(){
   $('#display input,button').hide();
+  $('#radio').css('display','none');
   if(($('#button').css('margin-left') === '0px')){
     players.push($('#p1').val(), $('#p2').val());
   } else {
