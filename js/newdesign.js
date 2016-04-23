@@ -70,7 +70,7 @@ var control     = [35,36,37,38,39,40,41], //allows gameplay for each column (min
 // jQuery / DOM elements setting up the user interface
 var $board          = $('.board'),
     $boardControl   = $('.control'),
-    $reset          = $('<button>Reset</button>').css('width','20%'),
+    $reset          = $('<button id="reset">Reset</button>').css('width','20%'),
     $done           = $('<button>Done</button>'),
     $replay         = $('<button>Replay</button>');
 // console.log($p1);
